@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>ArteMorfosis</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://github.com/artemorfosis/ArteMorfosis/raw/main/LogoMorfosis-removebg-preview.png" widtch="100" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Fraunces', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Fondo blanco */
+            color: #000000; /* Texto negro */
+        }
+
+        .navbar {
+            background-color: #ffd760;
+            padding: 10px;
+            display: flex;
+            justify-content: center; /* Centrar el contenido */
+            align-items: center;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px; /* Espaciado entre los elementos del menú */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 24px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .products-section {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .products-section button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: 2px solid #ddd;
+            border-radius: 20px; /* Bordes redondeados */
+            font-family: 'Fraunces', serif; /* Cambiar tipografía */
+            cursor: pointer;
+        }
+
+        .products-section button:nth-child(odd) {
+            background-color: #EB7A2A; /* Color para botones impares */
+            color: white; /* Texto blanco */
+        }
+
+        .products-section button:nth-child(even) {
+            background-color: #48287b; /* Color para botones pares */
+            color: white; /* Texto blanco */
+        }
+
+        .products-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .carousel img {
+            width: 150px;
+            height: 150px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .product-details {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #EF005B; /* Color de fondo del pie de página */
+            color: white; /* Texto blanco */
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer .social-links {
+            margin-bottom: 20px;
+        }
+
+        .footer .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white; /* Texto blanco */
+            font-size: 24px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .info-section {
+            display: flex;
+            margin: 20px 0;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-section img {
+            width: 200px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#"><img src="https://github.com/artemorfosis/ArteMorfosis/raw/main/LogoMorfosis-removebg-preview.png" alt="Logo" width="100"></a>
+        </div>
+    </div>
+
+    <div class="container-user">
+        <i class="fa-solid fa-user"></i>
+        <div class="menu">
+        </div>
+    </div>
+
+    <!-- Encabezado y Navegación -->
+    <div class="navbar">
+        <div class="logo">
+        </div>
+        <div class="menu" style="justify-content: center;"> <!-- Centramos el menú -->
+            <a href="#inicio">Inicio</a>
+            <a href="#productos" onclick="toggleMenu()">Productos</a>
+            <a href="#emprendimiento">Emprendimiento</a>
+            <a href="#footer">Contacto</a> <!-- Enlace de contacto al pie de página -->
+        </div>
+    </div>
+
+    <!-- Imagen Principal -->
+    <div id="inicio" class="main-image">
+        <h1>Imagen Principal</h1>
+    </div>
+
+    <!-- Sección de Productos -->
+    <div id="productos" class="products-section">
+        <h2>Productos</h2>
+        <button onclick="showCarousel('mdf')">MDF</button>
+        <button onclick="showCarousel('ceramica')">Cerámica</button>
+        <button onclick="showCarousel('plantas')">Plantas</button>
+    </div>
+
+    <!-- Carruseles de Productos -->
+    <div id="mdf-carousel" class="carousel">
+        <img src="mdf1.jpg" alt="MDF 1" onclick="showProductDetails('mdf1')">
+        <img src="mdf2.jpg" alt="MDF 2" onclick="showProductDetails('mdf2')">
+        <img src="mdf3.jpg" alt="MDF 3" onclick="showProductDetails('mdf3')">
+        <img src="mdf4.jpg" alt="MDF 4" onclick="showProductDetails('mdf4')">
+        <img src="mdf5.jpg" alt="MDF 5" onclick="showProductDetails('mdf5')">
+    </div>
+
+    <div id="ceramica-carousel" class="carousel">
+        <img src="ceramica1.jpg" alt="Cerámica 1" onclick="showProductDetails('ceramica1')">
+        <img src="ceramica2.jpg" alt="Cerámica 2" onclick="showProductDetails('ceramica2')">
+        <img src="ceramica3.jpg" alt="Cerámica 3" onclick="showProductDetails('ceramica3')">
+        <img src="ceramica4.jpg" alt="Cerámica 4" onclick="showProductDetails('ceramica4')">
+        <img src="ceramica5.jpg" alt="Cerámica 5" onclick="showProductDetails('ceramica5')">
+    </div>
+
+    <div id="plantas-carousel" class="carousel">
+        <img src="planta1.jpg" alt="Planta 1" onclick="showProductDetails('planta1')">
+        <img src="planta2.jpg" alt="Planta 2" onclick="showProductDetails('planta2')">
+        <img src="planta3.jpg" alt="Planta 3" onclick="showProductDetails('planta3')">
+        <img src="planta4.jpg" alt="Planta 4" onclick="showProductDetails('planta4')">
+        <img src="planta5.jpg" alt="Planta 5" onclick="showProductDetails('planta5')">
+    </div>
+
+    <!-- Detalles de Productos -->
+    <div id="product-details" class="product-details">
+        <img src="bla.jpg" alt="bla" onclick="showProductDetails('bla')">
+        <h2>Nombre del Producto</h2>
+        <p id="product-description">Descripción...</p>
+    </div>
+
+    <!-- Sección de Emprendimiento -->
+    <div id="emprendimiento" class="info-section">
+        <img src="https://github.com/imperviusdigital/impervius/blob/main/index.html" alt="Emprendimiento" width="100"></a>
+        <div>
+            <h2>Emprendimiento</h2>
+            <p>Información detallada sobre la empresa...</p>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://wa.me/3113903575">WhatsApp</a>
+            <a href="https://www.instagram.com/artemorfosiss?igsh=MXN0dzNqZW5qY2ZidQ==">Instagram</a>
+            <a href="https://www.facebook.com/arteamano.artesana">Facebook</a>
+        </div>
+        <p>Email: adrianamejiamora@gmail.com | Tel: (+57) 311 390 3575 </p>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('productos');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        function showCarousel(product) {
+            document.querySelectorAll('.carousel').forEach(carousel => carousel.style.display = 'none');
+            document.getElementById(product + '-carousel').style.display = 'block';
+        }
+
+        function showProductDetails(product) {
+            const details = document.getElementById('product-details');
+            details.style.display = 'block';
+            document.getElementById('product-description').innerText = 'Descripción del producto ' + product + '...';
+        }
+    </script>
+</body> 
+</html>
